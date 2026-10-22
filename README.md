@@ -37,4 +37,18 @@ Campos que necesito, con nombres fijos: precio en USD, barrio, ambientes, dormit
 Sumá las columnas que sirvan para un análisis o un modelo. Dejá un solo comando documentado y decime cuántas filas quedaron contra el total que anuncia el sitio.
 ```
 
-The CSV belongs in `data/`. That directory is gitignored, so the download stays on your machine and is not part of what you push.
+The CSV belongs in `data/` (or `Data/`). Those directories are gitignored, so the download stays on your machine and is not part of what you push.
+
+## Exploratory analysis
+
+The notebook `notebooks/eda_propiedades_caba.ipynb` explores listing prices in CABA (distributions, outliers, missing values, amenities parsed from the description, maps, and distance to subway stations).
+
+```bash
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
+python -m ipykernel install --user --name=taller-ia --display-name="taller IA"
+```
+
+Open `notebooks/eda_propiedades_caba.ipynb` and run all cells. It reads the first CSV in `Data/` and caches barrio/subway geo files under `Data/geo/`.
