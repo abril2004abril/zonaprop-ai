@@ -52,3 +52,17 @@ python -m ipykernel install --user --name=taller-ia --display-name="taller IA"
 ```
 
 Open `notebooks/eda_propiedades_caba.ipynb` and run all cells. It reads the first CSV in `Data/` and caches barrio/subway geo files under `Data/geo/`.
+
+## Price models
+
+The notebook `notebooks/modelos_precio.ipynb` trains three models of `log(precio_usd)` on an 80/20 split and compares them by MAE in USD, median percentage error and R² on log price:
+
+- Linear regression, missing values imputed with the training median
+- LightGBM, missing values imputed with the training median
+- LightGBM, missing values left as they are
+
+With the `.venv` active, install the new dependencies and run all cells:
+
+```bash
+pip install -r requirements.txt
+```
